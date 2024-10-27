@@ -1,5 +1,5 @@
 {% set name = "dockstring" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dockstring-{{ version }}.tar.gz
-  sha256: 0a998ddc0177b22b6bd0115594edcdf8e68e37f4ae487e9fe5b2d1536937b8b0
+  sha256: 832730f294e88fbcf576347b494a5c3a96eee4e71b23819f6455b6fa053f9f9d
 
 build:
   noarch: python
