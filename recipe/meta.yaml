@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dockstring-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dockstring-{{ version }}.tar.gz
   sha256: 832730f294e88fbcf576347b494a5c3a96eee4e71b23819f6455b6fa053f9f9d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.7,<3.11
+    - python >={{ python_min }},<3.11
     - rdkit <2022.04
     - openbabel =3.1.1
 
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dockstring/dockstring
